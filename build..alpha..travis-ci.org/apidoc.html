@@ -1,0 +1,1705 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/alfateam/rdb#readme"
+
+    >rdb (v1.6.2)</a>
+</h1>
+<h4>Object Relational Mapper</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb">module rdb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.emptyFilter">
+            function <span class="apidocSignatureSpan">rdb.</span>emptyFilter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getById">
+            function <span class="apidocSignatureSpan">rdb.</span>getById
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getFromDbById">
+            function <span class="apidocSignatureSpan">rdb.</span>getFromDbById
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getMany">
+            function <span class="apidocSignatureSpan">rdb.</span>getMany
+            <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.newId">
+            function <span class="apidocSignatureSpan">rdb.</span>newId
+            <span class="apidocSignatureSpan">(options, buf, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.promise">
+            function <span class="apidocSignatureSpan">rdb.</span>promise
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetById">
+            function <span class="apidocSignatureSpan">rdb.</span>tryGetById
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetFirstFromDb">
+            function <span class="apidocSignatureSpan">rdb.</span>tryGetFirstFromDb
+            <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetFromDbById">
+            function <span class="apidocSignatureSpan">rdb.</span>tryGetFromDbById
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rdb.</span>beginCommand</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rdb.</span>commitCommand</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rdb.</span>rollbackCommand</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.beginCommand">module rdb.beginCommand</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.beginCommand.endEdit">
+            function <span class="apidocSignatureSpan">rdb.beginCommand.</span>endEdit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.beginCommand.matches">
+            function <span class="apidocSignatureSpan">rdb.beginCommand.</span>matches
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rdb.beginCommand.</span>parameters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">rdb.beginCommand.</span>_text</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.commitCommand">module rdb.commitCommand</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.commitCommand.endEdit">
+            function <span class="apidocSignatureSpan">rdb.commitCommand.</span>endEdit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.commitCommand.matches">
+            function <span class="apidocSignatureSpan">rdb.commitCommand.</span>matches
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rdb.commitCommand.</span>parameters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">rdb.commitCommand.</span>_text</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.emptyFilter">module rdb.emptyFilter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.emptyFilter.emptyFilter">
+            function <span class="apidocSignatureSpan">rdb.</span>emptyFilter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.emptyFilter.and">
+            function <span class="apidocSignatureSpan">rdb.emptyFilter.</span>and
+            <span class="apidocSignatureSpan">(other)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.emptyFilter.not">
+            function <span class="apidocSignatureSpan">rdb.emptyFilter.</span>not
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.emptyFilter.or">
+            function <span class="apidocSignatureSpan">rdb.emptyFilter.</span>or
+            <span class="apidocSignatureSpan">(other)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.emptyFilter.sql">
+            function <span class="apidocSignatureSpan">rdb.emptyFilter.</span>sql
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rdb.emptyFilter.</span>parameters</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.getById">module rdb.getById</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getById.getById">
+            function <span class="apidocSignatureSpan">rdb.</span>getById
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getById.exclusive">
+            function <span class="apidocSignatureSpan">rdb.getById.</span>exclusive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.getFromDbById">module rdb.getFromDbById</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getFromDbById.getFromDbById">
+            function <span class="apidocSignatureSpan">rdb.</span>getFromDbById
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getFromDbById.exclusive">
+            function <span class="apidocSignatureSpan">rdb.getFromDbById.</span>exclusive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.getMany">module rdb.getMany</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getMany.getMany">
+            function <span class="apidocSignatureSpan">rdb.</span>getMany
+            <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.getMany.exclusive">
+            function <span class="apidocSignatureSpan">rdb.getMany.</span>exclusive
+            <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.newId">module rdb.newId</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.newId.newId">
+            function <span class="apidocSignatureSpan">rdb.</span>newId
+            <span class="apidocSignatureSpan">(options, buf, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.newId.v1">
+            function <span class="apidocSignatureSpan">rdb.newId.</span>v1
+            <span class="apidocSignatureSpan">(options, buf, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.newId.v4">
+            function <span class="apidocSignatureSpan">rdb.newId.</span>v4
+            <span class="apidocSignatureSpan">(options, buf, offset)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.promise">module rdb.promise</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.promise.promise">
+            function <span class="apidocSignatureSpan">rdb.</span>promise
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.promise.all">
+            function <span class="apidocSignatureSpan">rdb.promise.</span>all
+            <span class="apidocSignatureSpan">(arr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.promise.denodeify">
+            function <span class="apidocSignatureSpan">rdb.promise.</span>denodeify
+            <span class="apidocSignatureSpan">(fn, argumentCount)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.rollbackCommand">module rdb.rollbackCommand</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.rollbackCommand.endEdit">
+            function <span class="apidocSignatureSpan">rdb.rollbackCommand.</span>endEdit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.rollbackCommand.matches">
+            function <span class="apidocSignatureSpan">rdb.rollbackCommand.</span>matches
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rdb.rollbackCommand.</span>parameters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">rdb.rollbackCommand.</span>_text</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.tryGetById">module rdb.tryGetById</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetById.tryGetById">
+            function <span class="apidocSignatureSpan">rdb.</span>tryGetById
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetById.exclusive">
+            function <span class="apidocSignatureSpan">rdb.tryGetById.</span>exclusive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.tryGetFirstFromDb">module rdb.tryGetFirstFromDb</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetFirstFromDb.tryGetFirstFromDb">
+            function <span class="apidocSignatureSpan">rdb.</span>tryGetFirstFromDb
+            <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetFirstFromDb.exclusive">
+            function <span class="apidocSignatureSpan">rdb.tryGetFirstFromDb.</span>exclusive
+            <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rdb.tryGetFromDbById">module rdb.tryGetFromDbById</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetFromDbById.tryGetFromDbById">
+            function <span class="apidocSignatureSpan">rdb.</span>tryGetFromDbById
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rdb.tryGetFromDbById.exclusive">
+            function <span class="apidocSignatureSpan">rdb.tryGetFromDbById.</span>exclusive
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb" id="apidoc.module.rdb">module rdb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.emptyFilter" id="apidoc.element.rdb.emptyFilter">
+        function <span class="apidocSignatureSpan">rdb.</span>emptyFilter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function emptyFilter() {
+    return emptyFilter.and.apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getById" id="apidoc.element.rdb.getById">
+        function <span class="apidocSignatureSpan">rdb.</span>getById
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getById() {
+	var cached =  tryGetFromCacheById.apply(null,arguments);
+	if (cached)
+		return resultToPromise(cached);
+	return getFromDbById.apply(null,arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getFromDbById" id="apidoc.element.rdb.getFromDbById">
+        function <span class="apidocSignatureSpan">rdb.</span>getFromDbById
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get() {
+    return tryGetFromDbById.apply(null, arguments).then(onResult);
+
+    function onResult(row) {
+        if (row === null)
+            throw new Error(&#x22;Row not found.&#x22;);
+        return row;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getMany" id="apidoc.element.rdb.getMany">
+        function <span class="apidocSignatureSpan">rdb.</span>getMany
+        <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getMany(table, filter, strategy) {
+	return getManyCore(table,filter,strategy);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    waitingforMore = false;
+    stream.push(dtos.shift());
+}
+
+function getBatch() {
+    calculateLimit();
+    calculateBatchFilter();
+    return table.<span class="apidocCodeKeywordSpan">getMany</span>(batchFilter, strategy);
+}
+
+function calculateLimit() {
+    if (maxRows === undefined || maxRows === null)
+        strategy.limit = batchSize;
+    else {
+        var rowsLeft = maxRows - currentRowCount;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.newId" id="apidoc.element.rdb.newId">
+        function <span class="apidocSignatureSpan">rdb.</span>newId
+        <span class="apidocSignatureSpan">(options, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function v4(options, buf, offset) {
+  var i = buf &#x26;&#x26; offset || 0;
+
+  if (typeof(options) == &#x27;string&#x27;) {
+    buf = options == &#x27;binary&#x27; ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] &#x26; 0x0f) | 0x40;
+  rnds[8] = (rnds[8] &#x26; 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii &#x3c; 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.promise" id="apidoc.element.rdb.promise">
+        function <span class="apidocSignatureSpan">rdb.</span>promise
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function newPromise(func) {
+	if (!func)
+		return deferred.resolve();
+	return new promise(func);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetById" id="apidoc.element.rdb.tryGetById">
+        function <span class="apidocSignatureSpan">rdb.</span>tryGetById
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get() {
+	var cached =  tryGetFromCacheById.apply(null,arguments);
+	if (cached)
+		return resultToPromise(cached);
+	return tryGetFromDbById.apply(null,arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetFirstFromDb" id="apidoc.element.rdb.tryGetFirstFromDb">
+        function <span class="apidocSignatureSpan">rdb.</span>tryGetFirstFromDb
+        <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tryGet(table, filter, strategy) {
+    strategy = setLimit(strategy);
+    return getMany(table, filter, strategy).then(filterRows);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetFromDbById" id="apidoc.element.rdb.tryGetFromDbById">
+        function <span class="apidocSignatureSpan">rdb.</span>tryGetFromDbById
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tryGet() {
+    var filter = newPrimaryKeyFilter.apply(null, arguments);
+    var table = arguments[0];
+    var strategy = extractStrategy.apply(null, arguments);
+    return tryGetFirstFromDb(table, filter, strategy);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.beginCommand" id="apidoc.module.rdb.beginCommand">module rdb.beginCommand</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.beginCommand.endEdit" id="apidoc.element.rdb.beginCommand.endEdit">
+        function <span class="apidocSignatureSpan">rdb.beginCommand.</span>endEdit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function empty() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function popChanges() {	
+	var changeSet = getChangeSet();
+	var length = changeSet.length;
+	if (length &#x3e; 0) {
+		var lastCmd = changeSet[length-1];
+		if (lastCmd.endEdit)
+			lastCmd.<span class="apidocCodeKeywordSpan">endEdit</span>();
+		var compressed = compressChanges(changeSet);
+		changeSet.length = 0;
+		return compressed;
+	}
+	return changeSet;
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.beginCommand.matches" id="apidoc.element.rdb.beginCommand.matches">
+        function <span class="apidocSignatureSpan">rdb.beginCommand.</span>matches
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function empty() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var getChangeSet = require(&#x27;./getChangeSet&#x27;);
+
+function lastCommandMatches(row) {
+	var changeSet = getChangeSet();
+	var lastIndex = changeSet.length-1;
+	if (lastIndex &#x3e;= 0 &#x26;&#x26; changeSet[lastIndex].matches)
+		return changeSet[lastIndex].<span class="apidocCodeKeywordSpan">matches</span>(row);
+	return false;	
+}
+
+module.exports = lastCommandMatches;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.commitCommand" id="apidoc.module.rdb.commitCommand">module rdb.commitCommand</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.commitCommand.endEdit" id="apidoc.element.rdb.commitCommand.endEdit">
+        function <span class="apidocSignatureSpan">rdb.commitCommand.</span>endEdit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function empty() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function popChanges() {	
+	var changeSet = getChangeSet();
+	var length = changeSet.length;
+	if (length &#x3e; 0) {
+		var lastCmd = changeSet[length-1];
+		if (lastCmd.endEdit)
+			lastCmd.<span class="apidocCodeKeywordSpan">endEdit</span>();
+		var compressed = compressChanges(changeSet);
+		changeSet.length = 0;
+		return compressed;
+	}
+	return changeSet;
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.commitCommand.matches" id="apidoc.element.rdb.commitCommand.matches">
+        function <span class="apidocSignatureSpan">rdb.commitCommand.</span>matches
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function empty() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var getChangeSet = require(&#x27;./getChangeSet&#x27;);
+
+function lastCommandMatches(row) {
+	var changeSet = getChangeSet();
+	var lastIndex = changeSet.length-1;
+	if (lastIndex &#x3e;= 0 &#x26;&#x26; changeSet[lastIndex].matches)
+		return changeSet[lastIndex].<span class="apidocCodeKeywordSpan">matches</span>(row);
+	return false;	
+}
+
+module.exports = lastCommandMatches;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.emptyFilter" id="apidoc.module.rdb.emptyFilter">module rdb.emptyFilter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.emptyFilter.emptyFilter" id="apidoc.element.rdb.emptyFilter.emptyFilter">
+        function <span class="apidocSignatureSpan">rdb.</span>emptyFilter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function emptyFilter() {
+    return emptyFilter.and.apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.emptyFilter.and" id="apidoc.element.rdb.emptyFilter.and">
+        function <span class="apidocSignatureSpan">rdb.emptyFilter.</span>and
+        <span class="apidocSignatureSpan">(other)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">and = function (other) {
+    other = negotiateRawSqlFilter(other);
+    for (var i = 1; i &#x3c; arguments.length; i++) {
+        other = other.and(arguments[i]);
+    }
+    return other;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+emptyFilter.sql = parameterized.sql;
+emptyFilter.parameters = parameterized.parameters;
+
+emptyFilter.and = function(other) {
+other = negotiateRawSqlFilter(other);
+for (var i = 1; i &#x3c; arguments.length; i++) {
+    other = other.<span class="apidocCodeKeywordSpan">and</span>(arguments[i]);
+}
+return other;
+};
+
+emptyFilter.or = function(other) {
+other = negotiateRawSqlFilter(other);
+for (var i = 1; i &#x3c; arguments.length; i++) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.emptyFilter.not" id="apidoc.element.rdb.emptyFilter.not">
+        function <span class="apidocSignatureSpan">rdb.emptyFilter.</span>not
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">not = function () {
+    return emptyFilter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.emptyFilter.or" id="apidoc.element.rdb.emptyFilter.or">
+        function <span class="apidocSignatureSpan">rdb.emptyFilter.</span>or
+        <span class="apidocSignatureSpan">(other)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">or = function (other) {
+    other = negotiateRawSqlFilter(other);
+    for (var i = 1; i &#x3c; arguments.length; i++) {
+        other = other.or(arguments[i]);
+    }
+    return other;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    return other;
+};
+
+emptyFilter.or = function(other) {
+    other = negotiateRawSqlFilter(other);
+    for (var i = 1; i &#x3c; arguments.length; i++) {
+        other = other.<span class="apidocCodeKeywordSpan">or</span>(arguments[i]);
+    }
+    return other;
+};
+
+emptyFilter.not = function() {
+    return emptyFilter;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.emptyFilter.sql" id="apidoc.element.rdb.emptyFilter.sql">
+        function <span class="apidocSignatureSpan">rdb.emptyFilter.</span>sql
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sql = function () {
+    return this._text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function wrapQuery(connection) {
+	var runOriginalQuery = connection.query;
+	return runQuery;
+
+	function runQuery(query, onCompleted) {
+		var params = query.parameters;
+		var sql = query.<span class="apidocCodeKeywordSpan">sql</span>();
+		log(sql);
+		log(&#x27;parameters: &#x27; + params);
+		return runOriginalQuery.call(connection, sql, params, onCompleted);
+	}
+
+}
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.getById" id="apidoc.module.rdb.getById">module rdb.getById</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getById.getById" id="apidoc.element.rdb.getById.getById">
+        function <span class="apidocSignatureSpan">rdb.</span>getById
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getById() {
+	var cached =  tryGetFromCacheById.apply(null,arguments);
+	if (cached)
+		return resultToPromise(cached);
+	return getFromDbById.apply(null,arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getById.exclusive" id="apidoc.element.rdb.getById.exclusive">
+        function <span class="apidocSignatureSpan">rdb.getById.</span>exclusive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exclusive = function () {
+    return tryGetFromDbById.exclusive.apply(null, arguments).then(onResult);
+
+    function onResult(row) {
+        if (row === null)
+            throw new Error(&#x22;Row not found.&#x22;);
+        return row;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Cleanup line breaks in documentation.
+__1.5.7__
+Bugfix: getById.exclusive and tryGetById.exclusive did not lock if row was cached.
+Improved performance on tryGetFirst.
+__1.5.6__
+Raw sql filters can accept sql both as string and as function.  E.g. var filter = {sql: function() {return &#x27;foo &#x3e; 1&#x27
+;;}}.
+__1.5.5__
+Optional locks for getMany, tryGetFirst and tryGetById. Instead of calling getMany(params) just call getMany.<span class="apidocCodeKeywordSpan
+">exclusive</span>(params). Same syntax goes for tryGetFirst and tryGetById. This will result in  SELECT FOR UPDATE.
+Bugfix: bulk deletes now accepts raw sql filters too.
+__1.5.4__
+Transaction locks. Postgres only.
+__1.5.3__
+Upgraded to pg 6.0.3
+__1.5.2__
+Improved performance and reduced memory footprint.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.getFromDbById" id="apidoc.module.rdb.getFromDbById">module rdb.getFromDbById</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getFromDbById.getFromDbById" id="apidoc.element.rdb.getFromDbById.getFromDbById">
+        function <span class="apidocSignatureSpan">rdb.</span>getFromDbById
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get() {
+    return tryGetFromDbById.apply(null, arguments).then(onResult);
+
+    function onResult(row) {
+        if (row === null)
+            throw new Error(&#x22;Row not found.&#x22;);
+        return row;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getFromDbById.exclusive" id="apidoc.element.rdb.getFromDbById.exclusive">
+        function <span class="apidocSignatureSpan">rdb.getFromDbById.</span>exclusive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exclusive = function () {
+    return tryGetFromDbById.exclusive.apply(null, arguments).then(onResult);
+
+    function onResult(row) {
+        if (row === null)
+            throw new Error(&#x22;Row not found.&#x22;);
+        return row;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Cleanup line breaks in documentation.
+__1.5.7__
+Bugfix: getById.exclusive and tryGetById.exclusive did not lock if row was cached.
+Improved performance on tryGetFirst.
+__1.5.6__
+Raw sql filters can accept sql both as string and as function.  E.g. var filter = {sql: function() {return &#x27;foo &#x3e; 1&#x27
+;;}}.
+__1.5.5__
+Optional locks for getMany, tryGetFirst and tryGetById. Instead of calling getMany(params) just call getMany.<span class="apidocCodeKeywordSpan
+">exclusive</span>(params). Same syntax goes for tryGetFirst and tryGetById. This will result in  SELECT FOR UPDATE.
+Bugfix: bulk deletes now accepts raw sql filters too.
+__1.5.4__
+Transaction locks. Postgres only.
+__1.5.3__
+Upgraded to pg 6.0.3
+__1.5.2__
+Improved performance and reduced memory footprint.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.getMany" id="apidoc.module.rdb.getMany">module rdb.getMany</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getMany.getMany" id="apidoc.element.rdb.getMany.getMany">
+        function <span class="apidocSignatureSpan">rdb.</span>getMany
+        <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getMany(table, filter, strategy) {
+	return getManyCore(table,filter,strategy);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    waitingforMore = false;
+    stream.push(dtos.shift());
+}
+
+function getBatch() {
+    calculateLimit();
+    calculateBatchFilter();
+    return table.<span class="apidocCodeKeywordSpan">getMany</span>(batchFilter, strategy);
+}
+
+function calculateLimit() {
+    if (maxRows === undefined || maxRows === null)
+        strategy.limit = batchSize;
+    else {
+        var rowsLeft = maxRows - currentRowCount;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.getMany.exclusive" id="apidoc.element.rdb.getMany.exclusive">
+        function <span class="apidocSignatureSpan">rdb.getMany.</span>exclusive
+        <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exclusive = function (table, filter, strategy) {
+	return getManyCore(table,filter,strategy,true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Cleanup line breaks in documentation.
+__1.5.7__
+Bugfix: getById.exclusive and tryGetById.exclusive did not lock if row was cached.
+Improved performance on tryGetFirst.
+__1.5.6__
+Raw sql filters can accept sql both as string and as function.  E.g. var filter = {sql: function() {return &#x27;foo &#x3e; 1&#x27
+;;}}.
+__1.5.5__
+Optional locks for getMany, tryGetFirst and tryGetById. Instead of calling getMany(params) just call getMany.<span class="apidocCodeKeywordSpan
+">exclusive</span>(params). Same syntax goes for tryGetFirst and tryGetById. This will result in  SELECT FOR UPDATE.
+Bugfix: bulk deletes now accepts raw sql filters too.
+__1.5.4__
+Transaction locks. Postgres only.
+__1.5.3__
+Upgraded to pg 6.0.3
+__1.5.2__
+Improved performance and reduced memory footprint.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.newId" id="apidoc.module.rdb.newId">module rdb.newId</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.newId.newId" id="apidoc.element.rdb.newId.newId">
+        function <span class="apidocSignatureSpan">rdb.</span>newId
+        <span class="apidocSignatureSpan">(options, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function v4(options, buf, offset) {
+  var i = buf &#x26;&#x26; offset || 0;
+
+  if (typeof(options) == &#x27;string&#x27;) {
+    buf = options == &#x27;binary&#x27; ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] &#x26; 0x0f) | 0x40;
+  rnds[8] = (rnds[8] &#x26; 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii &#x3c; 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.newId.v1" id="apidoc.element.rdb.newId.v1">
+        function <span class="apidocSignatureSpan">rdb.newId.</span>v1
+        <span class="apidocSignatureSpan">(options, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function v1(options, buf, offset) {
+  var i = buf &#x26;&#x26; offset || 0;
+  var b = buf || [];
+
+  options = options || {};
+
+  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
+
+  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
+  // (1582-10-15 00:00).  JSNumbers aren&#x27;t precise enough for this, so
+  // time is handled internally as &#x27;msecs&#x27; (integer milliseconds) and &#x27;nsecs&#x27;
+  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
+  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
+
+  // Per 4.2.1.2, use count of uuid&#x27;s generated during the current clock
+  // cycle to simulate higher resolution clock
+  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
+
+  // Time since last uuid creation (in msecs)
+  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
+
+  // Per 4.2.1.2, Bump clockseq on clock regression
+  if (dt &#x3c; 0 &#x26;&#x26; options.clockseq === undefined) {
+    clockseq = clockseq + 1 &#x26; 0x3fff;
+  }
+
+  // Reset nsecs if clock regresses (new clockseq) or we&#x27;ve moved onto a new
+  // time interval
+  if ((dt &#x3c; 0 || msecs &#x3e; _lastMSecs) &#x26;&#x26; options.nsecs === undefined) {
+    nsecs = 0;
+  }
+
+  // Per 4.2.1.2 Throw error if too many uuids are requested
+  if (nsecs &#x3e;= 10000) {
+    throw new Error(&#x27;uuid.v1(): Can\&#x27;t create more than 10M uuids/sec&#x27;);
+  }
+
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+
+  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+  msecs += 12219292800000;
+
+  // `time_low`
+  var tl = ((msecs &#x26; 0xfffffff) * 10000 + nsecs) % 0x100000000;
+  b[i++] = tl &#x3e;&#x3e;&#x3e; 24 &#x26; 0xff;
+  b[i++] = tl &#x3e;&#x3e;&#x3e; 16 &#x26; 0xff;
+  b[i++] = tl &#x3e;&#x3e;&#x3e; 8 &#x26; 0xff;
+  b[i++] = tl &#x26; 0xff;
+
+  // `time_mid`
+  var tmh = (msecs / 0x100000000 * 10000) &#x26; 0xfffffff;
+  b[i++] = tmh &#x3e;&#x3e;&#x3e; 8 &#x26; 0xff;
+  b[i++] = tmh &#x26; 0xff;
+
+  // `time_high_and_version`
+  b[i++] = tmh &#x3e;&#x3e;&#x3e; 24 &#x26; 0xf | 0x10; // include version
+  b[i++] = tmh &#x3e;&#x3e;&#x3e; 16 &#x26; 0xff;
+
+  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
+  b[i++] = clockseq &#x3e;&#x3e;&#x3e; 8 | 0x80;
+
+  // `clock_seq_low`
+  b[i++] = clockseq &#x26; 0xff;
+
+  // `node`
+  var node = options.node || _nodeId;
+  for (var n = 0; n &#x3c; 6; ++n) {
+    b[i + n] = node[n];
+  }
+
+  return buf ? buf : bytesToUuid(b);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.newId.v4" id="apidoc.element.rdb.newId.v4">
+        function <span class="apidocSignatureSpan">rdb.newId.</span>v4
+        <span class="apidocSignatureSpan">(options, buf, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function v4(options, buf, offset) {
+  var i = buf &#x26;&#x26; offset || 0;
+
+  if (typeof(options) == &#x27;string&#x27;) {
+    buf = options == &#x27;binary&#x27; ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] &#x26; 0x0f) | 0x40;
+  rnds[8] = (rnds[8] &#x26; 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii &#x3c; 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.promise" id="apidoc.module.rdb.promise">module rdb.promise</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.promise.promise" id="apidoc.element.rdb.promise.promise">
+        function <span class="apidocSignatureSpan">rdb.</span>promise
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function newPromise(func) {
+	if (!func)
+		return deferred.resolve();
+	return new promise(func);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.promise.all" id="apidoc.element.rdb.promise.all">
+        function <span class="apidocSignatureSpan">rdb.promise.</span>all
+        <span class="apidocSignatureSpan">(arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function (arr) {
+  var args = Array.prototype.slice.call(arr);
+
+  return new Promise(function (resolve, reject) {
+    if (args.length === 0) return resolve([]);
+    var remaining = args.length;
+    function res(i, val) {
+      if (val &#x26;&#x26; (typeof val === &#x27;object&#x27; || typeof val === &#x27;function&#x27;)) {
+        if (val instanceof Promise &#x26;&#x26; val.then === Promise.prototype.then) {
+          while (val._81 === 3) {
+            val = val._65;
+          }
+          if (val._81 === 1) return res(i, val._65);
+          if (val._81 === 2) reject(val._65);
+          val.then(function (val) {
+            res(i, val);
+          }, reject);
+          return;
+        } else {
+          var then = val.then;
+          if (typeof then === &#x27;function&#x27;) {
+            var p = new Promise(then.bind(val));
+            p.then(function (val) {
+              res(i, val);
+            }, reject);
+            return;
+          }
+        }
+      }
+      args[i] = val;
+      if (--remaining === 0) {
+        resolve(args);
+      }
+    }
+    for (var i = 0; i &#x3c; args.length; i++) {
+      res(i, args[i]);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function end() {
+    var all = [];
+    for (var poolId in pools) {
+    	var endPool = pools[poolId].end();
+    	all.push(endPool);
+    }
+    return promise.<span class="apidocCodeKeywordSpan">all</span>(all);
+}
+
+module.exports = pools;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.promise.denodeify" id="apidoc.element.rdb.promise.denodeify">
+        function <span class="apidocSignatureSpan">rdb.promise.</span>denodeify
+        <span class="apidocSignatureSpan">(fn, argumentCount)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">denodeify = function (fn, argumentCount) {
+  if (
+    typeof argumentCount === &#x27;number&#x27; &#x26;&#x26; argumentCount !== Infinity
+  ) {
+    return denodeifyWithCount(fn, argumentCount);
+  } else {
+    return denodeifyWithoutCount(fn);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var pool = mysql.createPool(connectionString);
+	negotiatePoolOptions(pool, poolOptions);
+	var id = newId();
+	var boundEnd = end.bind(null, pool, id);
+	var c = {};
+
+	c.connect = pool.getConnection.bind(pool);
+	c.end = promise.<span class="apidocCodeKeywordSpan">denodeify</span>(boundEnd);
+	pools[id] = c;
+	return c;
+}
+
+module.exports = newPool;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.rollbackCommand" id="apidoc.module.rdb.rollbackCommand">module rdb.rollbackCommand</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.rollbackCommand.endEdit" id="apidoc.element.rdb.rollbackCommand.endEdit">
+        function <span class="apidocSignatureSpan">rdb.rollbackCommand.</span>endEdit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function empty() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function popChanges() {	
+	var changeSet = getChangeSet();
+	var length = changeSet.length;
+	if (length &#x3e; 0) {
+		var lastCmd = changeSet[length-1];
+		if (lastCmd.endEdit)
+			lastCmd.<span class="apidocCodeKeywordSpan">endEdit</span>();
+		var compressed = compressChanges(changeSet);
+		changeSet.length = 0;
+		return compressed;
+	}
+	return changeSet;
+
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.rollbackCommand.matches" id="apidoc.element.rdb.rollbackCommand.matches">
+        function <span class="apidocSignatureSpan">rdb.rollbackCommand.</span>matches
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function empty() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var getChangeSet = require(&#x27;./getChangeSet&#x27;);
+
+function lastCommandMatches(row) {
+	var changeSet = getChangeSet();
+	var lastIndex = changeSet.length-1;
+	if (lastIndex &#x3e;= 0 &#x26;&#x26; changeSet[lastIndex].matches)
+		return changeSet[lastIndex].<span class="apidocCodeKeywordSpan">matches</span>(row);
+	return false;	
+}
+
+module.exports = lastCommandMatches;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.tryGetById" id="apidoc.module.rdb.tryGetById">module rdb.tryGetById</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetById.tryGetById" id="apidoc.element.rdb.tryGetById.tryGetById">
+        function <span class="apidocSignatureSpan">rdb.</span>tryGetById
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get() {
+	var cached =  tryGetFromCacheById.apply(null,arguments);
+	if (cached)
+		return resultToPromise(cached);
+	return tryGetFromDbById.apply(null,arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetById.exclusive" id="apidoc.element.rdb.tryGetById.exclusive">
+        function <span class="apidocSignatureSpan">rdb.tryGetById.</span>exclusive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tryGet() {
+    var filter = newPrimaryKeyFilter.apply(null, arguments);
+    var table = arguments[0];
+    var strategy = extractStrategy.apply(null, arguments);
+    return tryGetFirstFromDb.exclusive(table, filter, strategy);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Cleanup line breaks in documentation.
+__1.5.7__
+Bugfix: getById.exclusive and tryGetById.exclusive did not lock if row was cached.
+Improved performance on tryGetFirst.
+__1.5.6__
+Raw sql filters can accept sql both as string and as function.  E.g. var filter = {sql: function() {return &#x27;foo &#x3e; 1&#x27
+;;}}.
+__1.5.5__
+Optional locks for getMany, tryGetFirst and tryGetById. Instead of calling getMany(params) just call getMany.<span class="apidocCodeKeywordSpan
+">exclusive</span>(params). Same syntax goes for tryGetFirst and tryGetById. This will result in  SELECT FOR UPDATE.
+Bugfix: bulk deletes now accepts raw sql filters too.
+__1.5.4__
+Transaction locks. Postgres only.
+__1.5.3__
+Upgraded to pg 6.0.3
+__1.5.2__
+Improved performance and reduced memory footprint.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.tryGetFirstFromDb" id="apidoc.module.rdb.tryGetFirstFromDb">module rdb.tryGetFirstFromDb</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetFirstFromDb.tryGetFirstFromDb" id="apidoc.element.rdb.tryGetFirstFromDb.tryGetFirstFromDb">
+        function <span class="apidocSignatureSpan">rdb.</span>tryGetFirstFromDb
+        <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tryGet(table, filter, strategy) {
+    strategy = setLimit(strategy);
+    return getMany(table, filter, strategy).then(filterRows);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetFirstFromDb.exclusive" id="apidoc.element.rdb.tryGetFirstFromDb.exclusive">
+        function <span class="apidocSignatureSpan">rdb.tryGetFirstFromDb.</span>exclusive
+        <span class="apidocSignatureSpan">(table, filter, strategy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exclusive = function (table, filter, strategy) {
+    strategy = setLimit(strategy);
+    return getMany.exclusive(table, filter, strategy).then(filterRows);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Cleanup line breaks in documentation.
+__1.5.7__
+Bugfix: getById.exclusive and tryGetById.exclusive did not lock if row was cached.
+Improved performance on tryGetFirst.
+__1.5.6__
+Raw sql filters can accept sql both as string and as function.  E.g. var filter = {sql: function() {return &#x27;foo &#x3e; 1&#x27
+;;}}.
+__1.5.5__
+Optional locks for getMany, tryGetFirst and tryGetById. Instead of calling getMany(params) just call getMany.<span class="apidocCodeKeywordSpan
+">exclusive</span>(params). Same syntax goes for tryGetFirst and tryGetById. This will result in  SELECT FOR UPDATE.
+Bugfix: bulk deletes now accepts raw sql filters too.
+__1.5.4__
+Transaction locks. Postgres only.
+__1.5.3__
+Upgraded to pg 6.0.3
+__1.5.2__
+Improved performance and reduced memory footprint.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rdb.tryGetFromDbById" id="apidoc.module.rdb.tryGetFromDbById">module rdb.tryGetFromDbById</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetFromDbById.tryGetFromDbById" id="apidoc.element.rdb.tryGetFromDbById.tryGetFromDbById">
+        function <span class="apidocSignatureSpan">rdb.</span>tryGetFromDbById
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tryGet() {
+    var filter = newPrimaryKeyFilter.apply(null, arguments);
+    var table = arguments[0];
+    var strategy = extractStrategy.apply(null, arguments);
+    return tryGetFirstFromDb(table, filter, strategy);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rdb.tryGetFromDbById.exclusive" id="apidoc.element.rdb.tryGetFromDbById.exclusive">
+        function <span class="apidocSignatureSpan">rdb.tryGetFromDbById.</span>exclusive
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tryGet() {
+    var filter = newPrimaryKeyFilter.apply(null, arguments);
+    var table = arguments[0];
+    var strategy = extractStrategy.apply(null, arguments);
+    return tryGetFirstFromDb.exclusive(table, filter, strategy);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Cleanup line breaks in documentation.
+__1.5.7__
+Bugfix: getById.exclusive and tryGetById.exclusive did not lock if row was cached.
+Improved performance on tryGetFirst.
+__1.5.6__
+Raw sql filters can accept sql both as string and as function.  E.g. var filter = {sql: function() {return &#x27;foo &#x3e; 1&#x27
+;;}}.
+__1.5.5__
+Optional locks for getMany, tryGetFirst and tryGetById. Instead of calling getMany(params) just call getMany.<span class="apidocCodeKeywordSpan
+">exclusive</span>(params). Same syntax goes for tryGetFirst and tryGetById. This will result in  SELECT FOR UPDATE.
+Bugfix: bulk deletes now accepts raw sql filters too.
+__1.5.4__
+Transaction locks. Postgres only.
+__1.5.3__
+Upgraded to pg 6.0.3
+__1.5.2__
+Improved performance and reduced memory footprint.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
